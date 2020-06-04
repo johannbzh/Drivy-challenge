@@ -12,7 +12,7 @@ with open("data/input.json","r") as file:
         dico={}
         for j in cars:
             if(j.get("id")==car_id):
-                price=j.get("price_per_day")*(datetime.datetime.strptime(i.get("end_date"),'%Y-%m-%d')-datetime.datetime.strptime(i.get("start_date"),'%Y-%m-%d')).days+j.get("price_per_km")*i.get("distance") 
+                price=j.get("price_per_day")*((datetime.datetime.strptime(i.get("end_date"),'%Y-%m-%d')-datetime.datetime.strptime(i.get("start_date"),'%Y-%m-%d')).days+1)+j.get("price_per_km")*i.get("distance") 
         dico["id"]=i.get("id")
         dico["price"]=price
         prices.append(dico)
